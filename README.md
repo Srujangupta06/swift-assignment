@@ -36,3 +36,5 @@ Installed React-icons
 2) User Avatar
 3) Input (ReadOnly)
 4) TableRow
+5) FilterItem
+6) SearchBar

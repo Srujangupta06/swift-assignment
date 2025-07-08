@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import TableRow from "../components/TableRow";
 import { fetchComments } from "../services/commentsService";
-
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
+import FilterItem from "../components/FilterItem";
+import { filters } from "../utils/constants";
+import SearchBar from "../components/SearchBar";
 const Comments = () => {
   const [comments, setComments] = useState([]);
 
@@ -19,9 +22,18 @@ const Comments = () => {
   }, []);
 
   return (
-    <div className="px-8 md:px-16 lg:px-28 py-6">
-      {/*Filters */}
-      {/*Search Bar */}
+    <div className="px-8 md:px-16 lg:px-28 pt-8">
+      <div className="my-8">
+        {/*Filters */}
+        <div className="flex items-center gap-x-2">
+          {filters.map((eachFilter) => (
+            <FilterItem name={eachFilter.label} key={eachFilter.id} />
+          ))}
+        </div>
+        {/*Search Bar */}
+        <SearchBar />
+      </div>
+
       {/*Comments Table */}
       <table className="w-full text-left border border-gray-200 rounded-lg overflow-hidden shadow-md">
         <thead className="bg-gray-200 text-[#272a4b]">
