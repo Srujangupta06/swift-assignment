@@ -1,10 +1,10 @@
 # Swift Frontend Internship Assignment
 
-To run development Server using Vite
+- To run development Server using Vite
 
     - npm run dev
 
-For Production Build
+- For Production Build
 
     - npm run build
 
@@ -18,6 +18,9 @@ For Production Build
 
 - Additionally added Not Found Page for catching Errors and better User Experience(UX)
 
+# Deployed Url 
+- Vercel
+    - https://swiftassignment-theta.vercel.app/
 # Icons
 
 Installed React-icons
@@ -66,3 +69,4 @@ Installed React-icons
     - Comments Per Page (Changable)
 - Searching By name,email,comment
 - Sorting By PostId, Name, Email
+- Loading Shimmer Effects

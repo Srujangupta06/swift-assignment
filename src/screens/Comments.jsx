@@ -5,6 +5,7 @@ import FilterItem from "../components/FilterItem";
 import { filters } from "../utils/constants";
 import SearchBar from "../components/SearchBar";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import TableRowShimmer from "../components/TableRowShimmer";
 
 const formatColumn = (col) => {
   if (col === "Post ID") return "postId";
@@ -118,9 +119,8 @@ const Comments = () => {
             />
           ))}
         </div>
-        
-          <SearchBar onHandleSearchInput={onHandleSearchInput} />
-        
+
+        <SearchBar onHandleSearchInput={onHandleSearchInput} />
       </div>
 
       {/* Table */}
@@ -143,7 +143,9 @@ const Comments = () => {
             </tr>
           </thead>
           <tbody className="bg-white text-gray-800">
-            {paginatedData.length === 0 ? (
+            {comments.length === 0 ? (
+              <TableRowShimmer />
+            ) : paginatedData.length === 0 ? (
               <tr>
                 <td colSpan="4" className="text-center py-4">
                   No Comments Found

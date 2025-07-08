@@ -4,11 +4,13 @@ import Input from "../components/Input";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../context/UserContext";
-
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import ProfileShimmer from "../components/ProfileShimmer";
 const Profile = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-  if (!user) return null;
+  if (!user) return <ProfileShimmer />;
   const { name, email, address, phone, id } = user;
   const { city, street } = address;
   return (
@@ -18,7 +20,9 @@ const Profile = () => {
           className="text-[#272a4b] cursor-pointer"
           onClick={() => navigate("/comments")}
         />
-        <h1 className="text-lg text-[#272a4b] font-[500]">Welcome, {name ? name : "User"}</h1>
+        <h1 className="text-lg text-[#272a4b] font-[500]">
+          Welcome, {name ? name : "User"}
+        </h1>
       </div>
 
       <div className="p-8 shadow-lg rounded-md border border-gray-300">
@@ -65,7 +69,7 @@ const Profile = () => {
               type="text"
               placeholder="Enter Your Address"
               labelName="Address"
-              value={street+", "+city}
+              value={street + ", " + city}
             />
             {/*Phone Number */}
             <Input
