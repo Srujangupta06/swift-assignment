@@ -2,10 +2,11 @@ import UserAvatar from "./UserAvatar";
 import { useContext, useEffect } from "react";
 import UserContext from "../context/UserContext";
 import { fetchUserInfo } from "../services/userService";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { user, setUser } = useContext(UserContext);
-
+  const navigate = useNavigate();
   const getUser = async () => {
     try {
       const userInfo = await fetchUserInfo();
@@ -23,7 +24,7 @@ const Header = () => {
   return (
     <header className="bg-[#272a4b] px-8 md:px-16 lg:px-28 flex justify-between py-4">
       {/* Left Section */}
-      <div>
+      <div onClick={() => navigate("/")} className="cursor-pointer">
         <h1 className="text-white text-lg">Logo</h1>
       </div>
 

@@ -5,7 +5,7 @@ export const fetchComments = async () => {
     const response = await fetch(COMMENTS_API);
     if (response.ok) {
       const data = await response.json();
-      return data.slice(0,5);
+      return data;
     }
   } catch (e) {
     console.error("FETCHING COMMENTS ERROR", e);
