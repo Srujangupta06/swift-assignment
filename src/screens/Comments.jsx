@@ -56,11 +56,13 @@ const Comments = () => {
   }, []);
 
   const onHandleSearchInput = (searchInput) => {
-    const filtered = comments.filter((item) =>
-      ["name", "email", "body"].some((field) =>
-        item[field].toLowerCase().includes(searchInput.toLowerCase())
-      )
-    );
+    const filtered = comments.filter((eachComment) => {
+      return (
+        eachComment.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+        eachComment.email.toLowerCase().includes(searchInput.toLowerCase()) ||
+        eachComment.body.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    });
     setFilteredComments(filtered);
     setSortConfig({ col: null, direction: null });
     setCurrentPage(0);
