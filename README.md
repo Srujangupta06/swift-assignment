@@ -81,8 +81,17 @@ This is a Single Page Application (SPA) built with React, where data is dynamica
 
 
 🌐 Frontend Setup using Vite
-npm install
-npm run dev
+
+## To Install all dependencies from package.json
+    - npm install
+
+## To Start Local Development Server
+    - npm run dev (using Vite Bundler)
+
+## To get Production Build
+    - npm run build
+        - Output Build is dist folder 
+        
 Opens app on https://swiftassignment-wheat.vercel.app
 
 

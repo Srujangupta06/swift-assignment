@@ -4,7 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const TableRowShimmer = () => {
     return (
-      <tbody className="bg-white text-gray-800 w-full">
+      <>
         {[...Array(10)].map((_, index) => (
           <tr key={index} className="border-t border-gray-300 hover:bg-gray-50">
             {/* ID */}
@@ -25,7 +25,7 @@ const TableRowShimmer = () => {
             </td>
           </tr>
         ))}
-      </tbody>
+      </>
     );
   };
   
